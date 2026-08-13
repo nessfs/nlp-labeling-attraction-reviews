@@ -1,0 +1,25 @@
+# Dependensi utama penelitian
+# Implementasi Natural Language Processing untuk Labeling Dataset
+# Ulasan Attraction di Indonesia
+
+# Pengolahan data
+pandas
+numpy
+openpyxl
+
+# Deteksi bahasa
+langdetect
+
+# Machine learning & evaluasi
+scikit-learn
+
+# Model Transformer & fine-tuning
+torch
+transformers
+accelerate
+sentencepiece
+safetensors
+
+# Visualisasi
+matplotlib
+seaborn
