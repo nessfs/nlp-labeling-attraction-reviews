@@ -16,9 +16,13 @@ scikit-learn
 # Model Transformer & fine-tuning
 torch
 transformers
+datasets
 accelerate
 sentencepiece
 safetensors
+
+# Evaluasi GPT (prompt-based zero-shot via API OpenAI)
+openai
 
 # Visualisasi
 matplotlib
