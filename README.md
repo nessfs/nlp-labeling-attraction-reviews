@@ -20,7 +20,7 @@ Bahasa Indonesia (`id`), dan Bahasa Spanyol (`es`).
 
 | Tahap | Jumlah |
 |-------|--------|
-| Raw Data (TripAdvisor 6.768 + Google Review 15.360) | 22.128 baris |
+| Data mentah (TripAdvisor 6.768 + Google Review 15.360) | 22.128 baris |
 | Dataset final setelah pembersihan & prapemrosesan | 10.777 baris |
 | Pembagian train / validation / test (*stratified* 70:15:15) | 7.543 / 1.617 / 1.617 |
 
@@ -113,6 +113,18 @@ pada keseluruhan dataset mencapai **93,28%**.
 > model pelabelan final tetap XLM-RoBERTa fine-tuned sesuai tiga kriteria di
 > atas.
 
+### Prosedur Evaluasi GPT
+
+Model GPT dievaluasi dengan pendekatan *prompt-based zero-shot*: model diberi
+instruksi klasifikasi beserta definisi ketiga label (positif, netral, negatif)
+tanpa contoh berlabel. Versi model yang digunakan adalah **GPT-5.5** (OpenAI),
+dan prompt lengkap tersedia pada berkas
+[`src/gpt_prompt.txt`](src/gpt_prompt.txt). Karena keterbatasan panjang input,
+1.617 ulasan test set diproses secara bertahap dalam **81 batch**, dengan
+keluaran diwajibkan berformat CSV (`review_id,label`) agar mudah diparsing dan
+dievaluasi. Evaluasi GPT dilakukan **hanya pada test set**; pelabelan seluruh
+dataset (10.777 baris) tetap menggunakan XLM-RoBERTa fine-tuned.
+
 ---
 
 ## Struktur Repositori
@@ -122,14 +134,15 @@ nlp-labeling-attraction-reviews/
 ├── README.md
 ├── requirements.txt
 ├── data/
-│   ├── raw/            # Raw Data hasil pengumpulan (tanpa user_id)
+│   ├── raw/            # Data mentah hasil pengumpulan (tanpa user_id)
 │   ├── interim/        # Data antara: hasil cleaning, proxy label, split
 │   └── final/          # Dataset final berlabel (10.777 baris, 12 kolom)
 ├── notebooks/          # Tiga notebook penelitian (01, 02, 03)
 ├── src/                # Fungsi inti tiap tahap penelitian
 │   ├── cleaning.py     # Tahap 1: pembersihan data & verifikasi bahasa
 │   ├── preprocessing.py# Tahap 2: prapemrosesan, proxy label, split dataset
-│   └── modeling.py     # Tahap 3: evaluasi lima model & pelabelan dataset
+│   ├── modeling.py     # Tahap 3: evaluasi lima model & pelabelan dataset
+│   └── gpt_prompt.txt  # Prompt yang digunakan untuk evaluasi GPT
 └── results/            # Metrik evaluasi & artefak hasil (mis. confusion matrix)
 ```
 
