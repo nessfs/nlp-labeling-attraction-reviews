@@ -1,0 +1,40 @@
+Anda adalah anotator sentimen untuk ulasan wisata multilingual.
+Tugas Anda adalah mengklasifikasikan setiap ulasan ke dalam salah satu label berikut:
+
+- positif: ulasan menunjukkan kepuasan, pengalaman baik, rekomendasi, pujian, atau kesan menyenangkan.
+- netral: ulasan bersifat informatif, campuran antara positif dan negatif, biasa saja, atau tidak menunjukkan emosi yang kuat.
+- negatif: ulasan menunjukkan ketidakpuasan, keluhan, kekecewaan, kritik, atau pengalaman buruk.
+
+Aturan penting:
+1. Gunakan isi teks ulasan sebagai dasar klasifikasi.
+2. Jangan menjelaskan alasan.
+3. Jangan menambahkan kolom lain.
+4. Jawab hanya dalam format CSV.
+5. Label harus persis salah satu dari: positif, netral, negatif.
+6. Pertahankan review_id sesuai input.
+
+Format output wajib:
+review_id,label
+
+Data ulasan:
+review_id,review
+350,"Seru banget..."
+4779,"Air terjun yang sangat Indah."
+1157,"Saya nyaman di tempat ini"
+5513,"There is no beach as it has been washed away. You can not swim anymore at Kuta"
+1633,"Rumah bapak ibu padmi"
+1849,"Just don’t bother making the trip"
+8705,"What a wonderful beach to visit. Just visited this beach by myself riding motorcycle. Tje white sand, a beautiful stone-statue of Panca Pandawa, and the natural-artistic-cliff. I recommend you all who read this review if you're visiting Bali and never been there. See you on my next review."
+2684,"Don't come here. Too many people. Sharks. Crocodile . Cobras. Big lizards that can eat a small child. Attack cows in the Rice Fields."
+6361,"A beautiful place to visit and need to catch the sunset. It is limited wheelchair access to rest room and to temples. however can see some of the views from the ground of the entrance. Recommend non slippery footwear if want to go down to the temples when it is a low tide."
+2990,"Recomeded !! Good view ✌"
+6164,"I love this place clean and wonderfull place to healing mind. i'll hope come here again with our special"
+2868,"Great waves here. Weather always great. One of the best in Bali."
+6940,"If i could give all the stars in the sky for Black Lava, this is my first glamping in Bali and we enjoyed it so much. First we stay for one night, it was soooooo good, we come back for anoother 2 nights on my first visit, I was in Onion 4, the camp was not directly facing the mountain. but it was near to the shared bathroom and toilet. the first visit, it was raining at dawn so the sun was not shining so bright at sunrise. but it was still good. Mery - she is such a sweetheart, she came and offered me to take pictures. she is a keeper, make sure you do have the chance to meet her. the room was clean and the sheet smells good. we slept through the night. even though we could hear the snoring from the camp next door. the second visit, this time in potato 4, perfect directly facing the mountain. room is a bit bigger and still comfortable enough for me and two kids. Lala in reception is also great, she is helpful. and i am lucky enough to meet mery once again. Black Lava, you guys are very lucky to have Mery, make sure dont let her go... check out time is 11 am and because we stay 2 nights, during 11 am - 3 pm, we have the camp to ourselves...it is very nice and peaceful Pool is a bit ..."
+996,"I went here yesterday for a walk. I have to say that this place is very cool and beautifully built with all the exotic orchids. This place could easily be a major attraction especially who loves to garden. I just wish it was bigger"
+2822,"This museum is really a joy, filled with life."
+5086,"Menyenangkan sekali"
+3633,"Harga tiket sesuai dgn wahana"
+1925,"Toko Lengkap, Harga murah, Recomended banget"
+52,"Went to this museum for the large bookshop next to it. The bookshop is selling indonesian books only and most books are study books. So I didnot stay too long."
+10506,"Fasilitas taman di temoat wisata ini masih baru dan perlu ditanam bunga oengganti rumput yang kurang tertata. Toilet tidak berfungsi walauoun nampak dgn bangunan baru. Bersih & banyak dipakai untuk jogging track, sepi dan nyaman untuk nongkrong melihat deburan ombak.."
